@@ -110,7 +110,7 @@ function HostPage({ meetingId }) {
             let existingChat = result.chats.map(  (val) =>{
                 return {
                     byNora : val.author == 'USER'? false: true,
-                    msg: `<p> ${val.message}</p>`
+                    msg: formatChatDetails(val.message)
                 }
                  
             })
