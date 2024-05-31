@@ -48,7 +48,7 @@ const RightPannel = ({ }) => {
      
         <Group  justify="center" className={classes.connectWithHP}>
           <Text fz="lg" fw="500" color='text.1'> Connect with a healthcare professional</Text>
-          <Button color='primary.0'> Find a specialist</Button>
+          <Link to="https://upswinghealth.com/get-care-now/" target="_blank" ><Button color='primary.0'> Find a specialist</Button> </Link>
          
          <Link to='/dashboard'>  <img className={classes.logo} width='100%' src={connectWithHPUrl} alt='nora logo' /> </Link>
        </Group>

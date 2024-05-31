@@ -49,7 +49,8 @@ const useStyles = createStyles((theme) => ({
     display:'flex',
     justifyContent:'end',
     paddingRight: 60,
-    position:'relative'
+    position:'relative',
+    alignItems: 'flex-start',
   },
   byNoraImage:{
     position: 'absolute',
@@ -85,8 +86,7 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'end',
     display: 'flex',
     justifyContent: 'end',
-    minHeight:0,
-    backgroundColor: theme.colors.background[4],
+    backgroundColor: theme.colors.background[5],
     width:'80%',
     'p':{
       textAlign: 'left',

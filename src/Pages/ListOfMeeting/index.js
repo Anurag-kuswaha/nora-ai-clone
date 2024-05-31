@@ -104,7 +104,7 @@ function ListOfMeeting() {
                 </Table>
             </Box>
             {
-                rows.length === 0 ? <p className='no-record-found'>{"No record found"}</p>
+                rows.length === 0 ? <p className='no-record-found'>{"No Past Chat found"}</p>
                     :
                     <></>
             }

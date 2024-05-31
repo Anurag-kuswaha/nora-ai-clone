@@ -36,9 +36,7 @@ export const useStyles = createStyles(theme => ({
         marginTop: 20,
         marginBlock: 20,
         borderRadius: 10,
-        [theme.fn.smallerThan(1050)]: {
-            width: 1200
-        },
+       
     },
     headerAndSearch: {
         width: '90%',
