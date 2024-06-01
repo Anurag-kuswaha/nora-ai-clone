@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, createContext, useState } from 'react';
-const Header = lazy(() => import('./Components/Header'));
+const Header = lazy(() => import('./Components/LeftPanel'));
 const Login = lazy(() => import('./Pages/Login'));
 const Signup = lazy(() => import('./Pages/Signup'));
 const Dashboard = lazy(() => import('./Pages/Dashboard'));

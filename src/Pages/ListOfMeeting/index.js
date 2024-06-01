@@ -7,7 +7,7 @@ import filter from "../../assets/images/filterIcon.svg"
 import SearchIcon from '../../assets/images/search.svg';
 import { data } from './properties.js';
 import { baseURL, getHeader } from '../../Utils/const.js';
-const LeftPannel = lazy(() => import('../../Components/Header'));
+const LeftPannel = lazy(() => import('../../Components/LeftPanel/index.js'));
 function ListOfMeeting() {
     const { classes, theme } = useStyles(useStyles)
     const [activePage, setActivePage] = useState(1);

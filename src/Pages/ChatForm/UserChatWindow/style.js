@@ -9,7 +9,11 @@ const useStyles = createStyles((theme) => ({
     margin: 0,
     padding: 0,
     background: `${theme.colors.background[1]} url("${chatBackground}") no-repeat fixed center !important`,
-    overflowY:'hidden'
+    overflowY:'hidden',
+    [theme.fn.smallerThan('sm')]: {
+      paddingTop:'100px',
+      // marginBottom:40,
+    },
   },
   chatWindow:{
     height: "85vh",
@@ -19,7 +23,8 @@ const useStyles = createStyles((theme) => ({
     overflowY: 'scroll',
     padding: 0,
     margin: 0,
-    marginTop:30,
+    marginTop:'30 px !important',
+    
 
   },
   byNora:{
@@ -37,8 +42,14 @@ const useStyles = createStyles((theme) => ({
       textAlign: 'left',
       lineHeight:'1.7',
       fontWeight:'400',
-      padding: 10
-    }
+      padding: 10,
+      animationName: 'noraTextAnimation',
+      animationDuration: '1s',
+    },
+    
+    [theme.fn.smallerThan('sm')]: {
+      width:'95%',
+    },
 
   },
   byNoraWrapper:{
@@ -74,7 +85,8 @@ const useStyles = createStyles((theme) => ({
       width:40,
       height:40,
       borderRadius: '46%',
-      backgroundColor:'white'
+      backgroundColor:theme.colors.primary[0],
+      color:'white'
     }
     
   },
@@ -93,7 +105,10 @@ const useStyles = createStyles((theme) => ({
       lineHeight:'1.7',
       fontWeight:'400',
       padding: 10
-    }
+    },
+    [theme.fn.smallerThan('sm')]: {
+      width:'95%',
+    },
 
   },
   inputText:{
@@ -115,7 +130,21 @@ const useStyles = createStyles((theme) => ({
     },
     'textarea:focus':{
       border: `2px solid ${theme.colors.secondary[0]}`, 
+   },
+   
+   [theme.fn.smallerThan('sm')]: {
+     width: "100vw",
+     'textarea':{
+      width: "80vw",
+   },
+   'mantine-Textarea-wrapper':{
+    width: "80vw",
+   },
+   '.mantine-Textarea-root' :{
+    width: "80vw",
    }
+
+  },
 
   },
   stickyTop:{
@@ -148,39 +177,6 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
   },
 
-
-  hostTimer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'end',
-    color: 'white',
-    'img': {
-      cursor: 'pointer',
-    },
-  },
-  timerHeading: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontSize: 25,
-    fontWeight: 600,
-    height: 50,
-  },
-  timer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    background: 'white',
-    color: 'black',
-    borderRadius: '52%',
-    width: 50,
-    height: 50,
-    fontSize: 25,
-    fontWeight: 600,
-    padding: 2,
-    margin: '0px 8px',
-    cursor: 'pointer',
-  },
   iconWrapper: {
     background: 'grey',
   },
@@ -193,6 +189,16 @@ const useStyles = createStyles((theme) => ({
     position:'absolute',
     top:'20%',
     right:'30%',
+  },
+  onlyMobile:{
+    [theme.fn.largerThan('sm')]:{
+      display: 'none',
+    }
+  },
+  onlyDesktop:{
+    [theme.fn.smallerThan('sm')]:{
+      display: 'none',
+    }
   }
 }));
 export default useStyles;

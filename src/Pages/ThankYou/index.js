@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import FeatureCarousel from '../../Components/FeatureCarousel'
 import useStyles from './style';
 import { getUserType } from '../../Utils/const.js';
-const Header = lazy(() => import('../../Components/Header'));
+const Header = lazy(() => import('../../Components/LeftPanel/index.js'));
 function Login() {
     const { classes } = useStyles(useStyles);
     const userType = useRef(getUserType());

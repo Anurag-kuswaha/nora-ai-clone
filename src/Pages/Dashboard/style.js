@@ -4,13 +4,12 @@ const useStyles = createStyles((theme) => ({
   wrapper: {
     height: "100vh",
     backgroundSize: 'cover',
-
-    [theme.fn.smallerThan('sm')]: {
-      padding: 20,
-      paddingBottom: 250
-    },
     margin: 0,
     padding: 0,
+    [theme.fn.smallerThan('sm')]: {
+      padding: 0,
+      paddingBottom: 0
+    },
   },
   header: {
     textAlign: 'left',
@@ -59,6 +58,12 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.largerThan('xs')]: {
       left: '23%',
+
+    }
+  },
+  RightPanel:{
+    [theme.fn.smallerThan('sm')]: {
+      display: 'none',
 
     }
   }

@@ -6,8 +6,7 @@ const useStyles = createStyles((theme) => ({
     backgroundSize: 'cover',
 
     [theme.fn.smallerThan('sm')]: {
-      padding: 20,
-      paddingBottom: 250
+      padding: 0,
     },
     margin: 0,
     padding: 0,

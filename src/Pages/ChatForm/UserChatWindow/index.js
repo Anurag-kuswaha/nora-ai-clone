@@ -1,6 +1,6 @@
 
 import { Grid, Box, Textarea, Button, Divider, Loader } from '@mantine/core';
-import React, { useEffect, useState, useReducer, useRef, useContext } from 'react';
+import React, { useEffect, useState, useReducer, useRef, useContext , useMemo} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import useStyles from './style.js';
 import { baseURL, getHeader, updateLoggedInData, getLoggedInUserDetails } from '../../../Utils/const.js';
@@ -9,6 +9,7 @@ import logoUrl from '../../../assets/images/companyLogo.png'
 import ShowNotification from '../../../Utils/notification.js';
 import { Parser } from "html-to-react";
 import { QueryContext } from '../.././../App.js';
+import { IconSend2 } from '@tabler/icons-react';
 function HostPage({ meetingId }) {
     const { classes } = useStyles(useStyles);
     const navigate = useNavigate();
@@ -32,7 +33,8 @@ function HostPage({ meetingId }) {
         let container = `<p>`
         chatDetailsNew = chatDetailsNew.split('\n');
         chatDetailsNew.forEach((text, index) => {
-            console.log('text is ', text);
+            console.log('text is ', text[0]);
+            text = text.trim();
             if (text.length != 0) {
                 if (text[0] == '*' && text[1] == '*') {
                     text = text.replaceAll('*', '');
@@ -121,7 +123,8 @@ function HostPage({ meetingId }) {
         }
         catch (error) {
             setLoading(false);
-            ShowNotification('failure', error.message, '')
+            ShowNotification('failure', `You don't have access to this chat`, '');
+            setTimeout(  () => { navigate('/dashboard')}, 1000)
         }
     }
     useEffect(() => {
@@ -189,7 +192,7 @@ function HostPage({ meetingId }) {
                 </Box>
 
 
-                {Chat}
+                {useMemo ( () => Chat, [chatDetails])}
                 { loading && <Loader className={classes.loader} variant="dots" color="primary.0" size="10rem" />}
             </Grid>
 
@@ -208,8 +211,17 @@ function HostPage({ meetingId }) {
                     />
                 </Grid.Col>
                 <Grid.Col span={2} style={{display: 'flex'}}>
-                    {loading ?  <Button color='secondary.0' onClick={askAIDoctor} disabled={loading ?'true':'false'}> STOP</Button> : 
-                     <Button color='secondary.0' onClick={askAIDoctor} > SEND</Button>}
+                    {loading ? <>
+                        <IconSend2 stroke={2} onClick={askAIDoctor} disabled={loading ? 'true' : 'false'} className={classes.onlyMobile}/>
+                        <Button color='secondary.0' onClick={askAIDoctor} disabled={loading ? 'true' : 'false'} className={classes.onlyDesktop}>
+                            STOP</Button>
+                    </> :
+                        <>
+                            <IconSend2 stroke={2} onClick={askAIDoctor} className={classes.onlyMobile}/>
+                            <Button color='secondary.0' onClick={askAIDoctor} className={classes.onlyDesktop}> SEND</Button>
+                        </>
+                    }
+
                    
                 </Grid.Col>
             </Grid>
