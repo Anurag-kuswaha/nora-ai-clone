@@ -5,9 +5,8 @@ const Login = lazy(() => import('./Pages/Login'));
 const Signup = lazy(() => import('./Pages/Signup'));
 const Dashboard = lazy(() => import('./Pages/Dashboard'));
 const ChatForm = lazy(() => import('./Pages/ChatForm'));
-const ThankYou = lazy(() => import('./Pages/ThankYou'));
-const ListOfMeeting = lazy(() => import('./Pages/ListOfMeeting'))
-
+const ListOfPastChat = lazy(() => import('./Pages/ListOfPastChat'))
+const AboutPage = lazy(() => import('./Pages/AboutPage'))
 const WebRoutes = () => {
     
     return (
@@ -18,10 +17,9 @@ const WebRoutes = () => {
             
                     <Route path="/dashboard" element={<Dashboard />}></Route>
                     <Route path="/chat/:chatId" element={<ChatForm />}></Route>
-               
+                    <Route path="/about" element={<AboutPage />}></Route>
 
-            <Route path="/list" element={<ListOfMeeting />}></Route>
-            <Route path="/thankyou" element={<ThankYou />}></Route>
+            <Route path="/list" element={<ListOfPastChat />}></Route>
         </Routes>
     )
 }

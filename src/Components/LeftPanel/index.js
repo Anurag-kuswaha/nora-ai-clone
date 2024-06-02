@@ -67,10 +67,10 @@ const LeftPanel = ({ activePage, hideBottomOnMobile, showBackButton }) => {
 
 
         <div className={classes.footer}>
-          <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
+          <Link to={ userDetails && Object.keys(userDetails).length > 0 && userDetails.firstName ? '/about':'/login'} className={classes.link} >
             <IconSwitchHorizontal className={classes.linkIcon} stroke={1.5} />
             <span style={{ paddingLeft: '13px' }}>Settings</span>
-          </a>
+          </Link>
           {
             userDetails && Object.keys(userDetails).length > 0 && userDetails.firstName && <a href="#" className={classes.link} onClick={(event) => { handleLogOut(); setTimeout(function () { navigate(`/`) }, 1000) }}>
               <IconLogout className={classes.linkIcon} stroke={1.5} />
@@ -91,10 +91,9 @@ const LeftPanel = ({ activePage, hideBottomOnMobile, showBackButton }) => {
             <Link to='/dashboard' style={{ paddingLeft: '10px' }}>  <img className={classes.logo} width='100%' src={logoUrl} alt='nora logo' /> </Link>
           </Grid.Col>
           <Grid.Col span={2}>
-            <a href="#" onClick={(event) => event.preventDefault()}>
-              {/* <IconSettings className={classes.linkIconSetting} stroke={2} size={200}/> */}
+          <Link to={ userDetails && Object.keys(userDetails).length > 0 && userDetails.firstName ? '/about':'/login'} >
               <img src={settingsUrl} ></img>
-            </a>
+          </Link>
           </Grid.Col>
 
         </Grid>

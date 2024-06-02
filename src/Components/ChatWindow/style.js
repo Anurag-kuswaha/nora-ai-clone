@@ -95,6 +95,9 @@ const useStyles = createStyles((theme) => ({
         maxWidth: 200,
         alignItems: 'center',
         zIndex:1001,
+        [theme.fn.smallerThan('sm')]:{
+            left:'10vw',
+        },
       },
 
 }));

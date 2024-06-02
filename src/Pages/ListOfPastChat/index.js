@@ -8,7 +8,7 @@ import SearchIcon from '../../assets/images/search.svg';
 import { data } from './properties.js';
 import { baseURL, getHeader } from '../../Utils/const.js';
 const LeftPannel = lazy(() => import('../../Components/LeftPanel/index.js'));
-function ListOfMeeting() {
+function ListOfPastChat() {
     const { classes, theme } = useStyles(useStyles)
     const [activePage, setActivePage] = useState(1);
     const [entries, setEntries] = useState([]);
@@ -66,7 +66,7 @@ function ListOfMeeting() {
         if (value === "") {
             setEntries(pageLoadEntries);
         } else {
-            const filteredEntries = pageLoadEntries.filter(item => `${(item.startQuery && item.startQuery.includes(value) )}`
+            const filteredEntries = pageLoadEntries.filter(item =>  item.startQuery.includes(value)
             );
             setEntries(filteredEntries);
         }
@@ -117,4 +117,4 @@ function ListOfMeeting() {
     );
 }
 
-export default ListOfMeeting;
+export default ListOfPastChat;

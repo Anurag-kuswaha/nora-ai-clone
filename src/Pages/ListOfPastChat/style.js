@@ -10,6 +10,7 @@ export const useStyles = createStyles(theme => ({
         },
         margin: 0,
         padding: 0,
+        overflow:'scroll'
       },
     wrapper2: {
         background: theme.colors.background[0],
@@ -20,6 +21,7 @@ export const useStyles = createStyles(theme => ({
         [theme.fn.smallerThan(800)]: {
             backgroundImage: 'none'
         },
+        
     },
     tableContainer: {
         width: '90%',

@@ -22,6 +22,23 @@ const useStyles = createStyles((theme) => ({
     color: theme.colors.primary[0],
     marginBottom: 50,
   },
+  header2: {
+    textAlign: 'left',
+    fontSize: 25,
+    fontWeight: 900,
+    color: theme.colors.secondary[0],
+    marginBottom: 50,
+    textDecoration:'none',
+  },
+
+  text:{
+    textAlign: 'left',
+    fontSize: 20,
+    fontWeight: 500,
+    color: theme.colors.primary[0],
+    marginBottom: 15,
+    textDecoration:'none',
+  },
 
   left: {
     width: 500,
